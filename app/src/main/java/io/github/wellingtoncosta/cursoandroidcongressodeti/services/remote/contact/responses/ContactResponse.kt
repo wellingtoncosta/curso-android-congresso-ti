@@ -1,6 +1,6 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.responses
 
-import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.model.Contact
+import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 
 data class ContactResponse(
     val id: Int,

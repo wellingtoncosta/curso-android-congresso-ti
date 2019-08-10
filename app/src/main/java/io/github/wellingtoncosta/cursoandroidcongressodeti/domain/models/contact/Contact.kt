@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.domain.model
+package io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact
 
 data class Contact(
     val id: Int,

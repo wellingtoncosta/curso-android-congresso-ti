@@ -2,6 +2,7 @@ package io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.cont
 
 import com.github.kittinunf.fuel.gson.responseObject
 import com.github.kittinunf.fuel.httpGet
+import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.exceptions.runtimeexception.NetworkException
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.responses.ContactResponse
 
 class ContactFuelApiDataSource : ContactApiDataSource {
@@ -11,7 +12,7 @@ class ContactFuelApiDataSource : ContactApiDataSource {
 
         return when (response.statusCode) {
             200, 304 -> result.get()
-            else -> throw Exception()
+            else -> throw NetworkException()
         }
     }
 
@@ -21,7 +22,7 @@ class ContactFuelApiDataSource : ContactApiDataSource {
         return when (response.statusCode) {
             200, 304 -> result.get()
             404 -> null
-            else -> throw Exception()
+            else -> throw NetworkException()
         }
     }
 
