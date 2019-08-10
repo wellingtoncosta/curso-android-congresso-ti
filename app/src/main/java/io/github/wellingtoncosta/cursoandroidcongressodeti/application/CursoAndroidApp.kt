@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application
 
 import android.app.Application
 import com.github.kittinunf.fuel.core.FuelManager

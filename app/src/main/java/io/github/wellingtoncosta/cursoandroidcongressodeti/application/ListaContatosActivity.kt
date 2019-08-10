@@ -1,7 +1,8 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.R
 
 class ListaContatosActivity : AppCompatActivity() {
 
