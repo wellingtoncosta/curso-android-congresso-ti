@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.components.contactcardview.domain.dtos.ContactDto
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.components.contactcardview.domain.dtos.toDto
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ContactItemBinding
+import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 
 class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
-    private var mData: List<*>? = null
+    private var mData: List<Contact>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val itemBinding = DataBindingUtil.inflate<ContactItemBinding>(
@@ -29,10 +30,10 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() 
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val contact = mData?.get(position)
-        contact?.let { holder.setContact(it.toString()) }
+        contact?.let { holder.setContact(it) }
     }
 
-    fun addData(data: List<*>) {
+    fun addData(data: List<Contact>) {
         mData = data
         notifyDataSetChanged()
     }
@@ -40,14 +41,8 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() 
     inner class ContactViewHolder(private val itemBinding: ContactItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
-        fun setContact(contact: String) {
-            itemBinding.contactItemCardView.setContactDto(
-                ContactDto(
-                    "Eric C. Leão",
-                    "ericcleao@gmail.com",
-                    "(82)99999-9999"
-                )
-            )
+        fun setContact(contact: Contact) {
+            itemBinding.contactItemCardView.setContactDto(contact.toDto())
         }
 
 
