@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactQueryModel
 
 @Dao
 interface ContactDao {
@@ -28,22 +29,22 @@ interface ContactDao {
 
     @Query(
         """
-        SELECT contacts.*
+        SELECT contacts.*, favorite_contacts.id AS favorite_id
         FROM contacts
         INNER JOIN favorite_contacts ON favorite_contacts.contact_id = contacts.id;
         """
     )
-    fun getAllFavoriteContacts(): List<ContactEntity>
+    fun getAllFavoriteContacts(): List<ContactQueryModel>
 
     @Query(
         """
-        SELECT contacts.*
+        SELECT contacts.*, favorite_contacts.id AS favorite_id
         FROM contacts
         INNER JOIN favorite_contacts ON favorite_contacts.contact_id = contacts.id
         WHERE contacts.id = :contactId;
         """
     )
-    fun getFavoriteContactById(contactId: Int): ContactEntity?
+    fun getFavoriteContactById(contactId: Int): ContactQueryModel?
 
     @Insert
     fun insert(contactEntity: ContactEntity): Long

@@ -33,10 +33,7 @@ class ContactRepositoryImpl(
             val allFavoriteContacts = contactDao.getAllFavoriteContacts()
 
             allFavoriteContacts.map {
-                val contact = it.toModel()
-
-                contact.favoriteId = favoriteContactDao.getFavoriteContactByContactId(contact.id).id
-                contact
+                it.toModel()
             }
         }
 
@@ -54,8 +51,8 @@ class ContactRepositoryImpl(
 
             if (favoriteContact != null) {
                 favoriteContactDao.delete(
-                    favoriteContactEntity = favoriteContactDao.getFavoriteContactByContactId(
-                        favoriteContact.id
+                    favoriteContactEntity = favoriteContactDao.getFavoriteContactById(
+                        favoriteContact.favoriteId
                     )
                 )
             } else {

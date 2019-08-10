@@ -13,11 +13,11 @@ interface FavoriteContactDao {
         """
         SELECT *
         FROM favorite_contacts
-        WHERE favorite_contacts.contact_id = :contactId
+        WHERE favorite_contacts.id = :id
         
         """
     )
-    fun getFavoriteContactByContactId(contactId: Int): FavoriteContactEntity
+    fun getFavoriteContactById(id: Int): FavoriteContactEntity
 
     @Insert
     fun insert(favoriteContactEntity: FavoriteContactEntity): Long

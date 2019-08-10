@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "favorite_contacts")
 data class FavoriteContactEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    var id: Int? = null,
     @ColumnInfo(name = "contact_id")
     @ForeignKey(
         entity = ContactEntity::class,
@@ -18,9 +18,4 @@ data class FavoriteContactEntity(
         childColumns = ["contact_id"]
     )
     val contactId: Int
-) {
-
-    constructor(contactId: Int) : this(0, contactId)
-
-
-}
+)
