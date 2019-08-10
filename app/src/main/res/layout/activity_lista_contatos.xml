@@ -7,7 +7,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".app.ui.ListaContatosActivity">
+            tools:context=".app.ui.listarcontatos.ListaContatosActivity">
 
         <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"

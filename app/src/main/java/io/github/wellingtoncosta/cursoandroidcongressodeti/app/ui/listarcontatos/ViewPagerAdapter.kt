@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui
+package io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.listarcontatos
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
