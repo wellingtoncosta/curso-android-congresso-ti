@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.selectcontact.SelectContactFragment
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.selectfavoritecontact.SelectFavoriteContactFragment
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.SelectContactActivityBinding
 
 class SelectContactActivity : AppCompatActivity() {
