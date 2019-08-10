@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Curso Android - Congresso de TI</string>
+    <string name="contatos">Contatos</string>
+    <string name="favoritos">Favoritos</string>
     <string name="lista_contatos">Lista de Contatos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
