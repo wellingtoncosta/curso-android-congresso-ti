@@ -8,7 +8,9 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.R
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.components.contactcardview.domain.dtos.ContactDto
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ContactItemBinding
 
-class ContactAdapter(private val data: List<*>) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+
+    private var mData: List<*>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val itemBinding = DataBindingUtil.inflate<ContactItemBinding>(
@@ -22,17 +24,30 @@ class ContactAdapter(private val data: List<*>) : RecyclerView.Adapter<ContactAd
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return mData?.size ?: 0
     }
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        holder.setContact(data[position].toString())
+        val contact = mData?.get(position)
+        contact?.let { holder.setContact(it.toString()) }
     }
 
-    inner class ContactViewHolder(private val itemBinding: ContactItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
+    fun addData(data: List<*>) {
+        mData = data
+        notifyDataSetChanged()
+    }
+
+    inner class ContactViewHolder(private val itemBinding: ContactItemBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
         fun setContact(contact: String) {
-            itemBinding.contactItemCardView.setContactDto(ContactDto("Eric C. Leão", "ericcleao@gmail.com", "(82)99999-9999"))
+            itemBinding.contactItemCardView.setContactDto(
+                ContactDto(
+                    "Eric C. Leão",
+                    "ericcleao@gmail.com",
+                    "(82)99999-9999"
+                )
+            )
         }
 
 

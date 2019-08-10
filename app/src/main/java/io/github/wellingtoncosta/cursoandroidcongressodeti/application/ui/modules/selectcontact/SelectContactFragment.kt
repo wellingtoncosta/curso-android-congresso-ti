@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.adapters.ContactAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.SelectContactFragmentBinding
 
-class SelectContactFragment : Fragment() {
+abstract class SelectContactFragment : Fragment() {
 
     private lateinit var mSelectContactFragmentBinding: SelectContactFragmentBinding
+
+    private val mContactAdapter = ContactAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mSelectContactFragmentBinding =
@@ -23,7 +26,19 @@ class SelectContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mSelectContactFragmentBinding.selectContactRecyclerView.adapter
+        mSelectContactFragmentBinding.selectContactRecyclerView.adapter = mContactAdapter
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        configureViewModelObservers()
+    }
+
+    abstract fun configureViewModelObservers()
+
+    fun setContactAdapterData(contacts: List<*>) {
+        mContactAdapter.addData(contacts)
     }
 
 

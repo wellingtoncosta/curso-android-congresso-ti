@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".application.ui.modules.SelectContactActivity">
+        tools:context=".application.ui.modules.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -22,7 +22,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:title="@string/lista_contatos" />
+                app:title="@string/main.toolbar_title" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
