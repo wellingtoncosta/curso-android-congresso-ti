@@ -2,6 +2,7 @@ package io.github.wellingtoncosta.cursoandroidcongressodeti.services.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.ContactDao
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.FavoriteContactDao
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactEntity
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.FavoriteContactEntity
@@ -12,6 +13,8 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contac
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun contactDao(): ContactDao
 
     abstract fun favoriteContactDao(): FavoriteContactDao
 
