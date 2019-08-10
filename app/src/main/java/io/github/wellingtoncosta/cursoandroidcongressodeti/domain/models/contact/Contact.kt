@@ -5,5 +5,5 @@ data class Contact(
     val name: String,
     val email: String,
     val phoneNumber: String,
-    val favoriteId: Int? = null
+    var favoriteId: Int? = null
 )

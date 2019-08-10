@@ -18,4 +18,9 @@ data class FavoriteContactEntity(
         childColumns = ["contact_id"]
     )
     val contactId: Int
-)
+) {
+
+    constructor(contactId: Int) : this(0, contactId)
+
+
+}

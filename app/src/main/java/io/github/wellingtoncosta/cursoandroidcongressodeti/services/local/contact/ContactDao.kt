@@ -1,6 +1,8 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact
 
 import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactEntity
 
@@ -15,6 +17,14 @@ interface ContactDao {
     )
     fun getAllContacts(): List<ContactEntity>
 
+    @Query(
+        """
+        SELECT contacts.*
+        FROM contacts
+        WHERE contacts.id = :contactId;
+        """
+    )
+    fun getContactById(contactId: Int): ContactEntity?
 
     @Query(
         """
@@ -35,5 +45,10 @@ interface ContactDao {
     )
     fun getFavoriteContactById(contactId: Int): ContactEntity?
 
+    @Insert
+    fun insert(contactEntity: ContactEntity): Long
+
+    @Delete
+    fun delete(contactEntity: ContactEntity)
 
 }
