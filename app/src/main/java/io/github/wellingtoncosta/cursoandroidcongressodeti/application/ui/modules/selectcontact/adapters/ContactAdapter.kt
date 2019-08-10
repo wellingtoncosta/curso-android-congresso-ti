@@ -1,10 +1,11 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.selectcontact.adapters
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.components.contactcardview.domain.dtos.ContactDto
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ContactItemBinding
 
 class ContactAdapter(private val data: List<*>) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
@@ -25,10 +26,17 @@ class ContactAdapter(private val data: List<*>) : RecyclerView.Adapter<ContactAd
     }
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        holder.setContact(data[position].toString())
     }
 
-    inner class ContactViewHolder(itemBinding: ContactItemBinding) : RecyclerView.ViewHolder(itemBinding.root)
+    inner class ContactViewHolder(private val itemBinding: ContactItemBinding) : RecyclerView.ViewHolder(itemBinding.root) {
+
+        fun setContact(contact: String) {
+            itemBinding.contactItemCardView.setContactDto(ContactDto("Eric C. Leão", "ericcleao@gmail.com", "(82)99999-9999"))
+        }
+
+
+    }
 
 
 }

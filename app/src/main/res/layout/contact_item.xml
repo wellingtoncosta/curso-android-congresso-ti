@@ -5,11 +5,15 @@
 
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-    </LinearLayout>
+        <io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.components.contactcardview.ContactCardView
+            android:id="@+id/contact_item_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
 
 </layout>

@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.selectcontact
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact
 
 import android.os.Bundle
 import android.view.LayoutInflater

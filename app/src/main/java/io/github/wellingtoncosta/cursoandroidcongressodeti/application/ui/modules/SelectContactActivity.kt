@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.selectcontact.SelectContactFragment
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.SelectContactFragment
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.SelectContactActivityBinding
 
 class SelectContactActivity : AppCompatActivity() {
