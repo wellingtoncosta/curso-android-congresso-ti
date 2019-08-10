@@ -6,15 +6,13 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.CASCADE
 import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "favorite_contacts"
-)
-data class FavoriteContact(
+@Entity(tableName = "favorite_contacts")
+data class FavoriteContactEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo(name = "contact_id")
     @ForeignKey(
-        entity = Contact::class,
+        entity = ContactEntity::class,
         parentColumns = ["contact_id"],
         onDelete = CASCADE,
         childColumns = ["contact_id"]
