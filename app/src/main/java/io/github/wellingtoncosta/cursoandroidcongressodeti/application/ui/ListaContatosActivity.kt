@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
