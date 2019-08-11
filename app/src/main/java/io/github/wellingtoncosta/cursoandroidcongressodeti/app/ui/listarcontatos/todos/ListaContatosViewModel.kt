@@ -23,6 +23,7 @@ class ListaContatosViewModel(
     fun listarTodos() {
         doInBackground {
             try {
+
                 _carregando.postValue(true)
 
                 _contatos.postValue(repository.listarTodos())

@@ -23,6 +23,7 @@ class ListaContatosFavoritosViewModel(
     fun listarFavoritos() {
         doInBackground {
             try {
+                
                 _carregando.postValue(true)
 
                 _favoritos.postValue(repository.listarFavoritos())
