@@ -7,7 +7,7 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.extensions.exe
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repositories.contact.ContactRepository
 
-class SelectFavotiteContactViewModel(private val repository: ContactRepository) : ViewModel() {
+class SelectFavoriteContactViewModel(private val repository: ContactRepository) : ViewModel() {
 
     private val _loading          = MutableLiveData<Boolean>()
     private val _favoriteContacts = MutableLiveData<List<Contact>>()
@@ -17,7 +17,7 @@ class SelectFavotiteContactViewModel(private val repository: ContactRepository) 
     val favoriteContacts : LiveData<List<Contact>> get() = _favoriteContacts
     val error: LiveData<Throwable> get()                 = _error
 
-    private fun loadContacts() {
+    fun loadFavoriteContacts() {
         doInBackground {
             try {
                 _loading.postValue(true)

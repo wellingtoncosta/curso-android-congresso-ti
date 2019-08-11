@@ -6,6 +6,7 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.BuildConfig.API_URL
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.config.databaseModule
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.config.networkModule
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.config.repositoryModule
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.config.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -26,7 +27,8 @@ class CursoAndroidApp : Application() {
                 listOf(
                     databaseModule,
                     networkModule,
-                    repositoryModule
+                    repositoryModule,
+                    viewModelModule
                 )
             )
         }

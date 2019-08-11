@@ -17,7 +17,7 @@ class SelectContactViewModel(private val repository: ContactRepository) : ViewMo
     val contacts: LiveData<List<Contact>> get() = _contacts
     val error: LiveData<Throwable> get()        = _error
 
-    private fun loadContacts() {
+    fun loadContacts() {
         doInBackground {
             try {
                 _loading.postValue(true)

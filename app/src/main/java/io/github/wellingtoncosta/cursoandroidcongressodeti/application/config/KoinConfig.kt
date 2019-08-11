@@ -1,6 +1,8 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.application.config
 
 import androidx.room.Room
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.viewmodels.SelectContactViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.viewmodels.SelectFavoriteContactViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repositories.contact.ContactRepository
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.AppDatabase
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.AppDatabase.Companion.DATABASE_NAME
@@ -8,6 +10,7 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.conta
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.ContactFuelApiDataSource
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.repository.ContactRepositoryImpl
 import org.koin.android.ext.koin.androidApplication
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val databaseModule = module {
@@ -30,4 +33,10 @@ val networkModule = module {
 
 val repositoryModule = module {
     single<ContactRepository> { ContactRepositoryImpl(get(), get(), get()) }
+}
+
+val viewModelModule = module {
+    viewModel { SelectContactViewModel(get()) }
+
+    viewModel { SelectFavoriteContactViewModel(get()) }
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.adapters.ContactAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.SelectContactFragmentBinding
+import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 
 abstract class SelectContactFragment : Fragment() {
 
@@ -33,11 +34,15 @@ abstract class SelectContactFragment : Fragment() {
         super.onStart()
 
         configureViewModelObservers()
+
+        requestData()
     }
 
     abstract fun configureViewModelObservers()
 
-    fun setContactAdapterData(contacts: List<*>) {
+    abstract fun requestData()
+
+    fun setContactAdapterData(contacts: List<Contact>) {
         mContactAdapter.addData(contacts)
     }
 
