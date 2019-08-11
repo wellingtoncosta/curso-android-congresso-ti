@@ -10,7 +10,7 @@ interface ContactRepository {
 
     fun getContactById(contactId: Int): Contact?
 
-    fun favorite(contact: Contact)
+    fun favorite(contact: Contact): Contact?
 
 
 }

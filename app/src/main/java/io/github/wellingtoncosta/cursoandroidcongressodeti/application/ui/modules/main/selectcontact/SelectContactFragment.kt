@@ -57,6 +57,10 @@ abstract class SelectContactFragment : Fragment() {
 
     private fun startFavoriteContactScreen(contactId: Int) {
         val intent = Intent(activity, FavoriteContactActivity::class.java)
+
+        intent.putExtra(KEY_CONTACT_ID, contactId)
+
+        startActivity(intent)
     }
 
     internal fun setContactAdapterData(contacts: List<Contact>) {
@@ -73,6 +77,13 @@ abstract class SelectContactFragment : Fragment() {
 
     internal fun showErrorMessage(message: String?) {
         Toast.makeText(context, message, LENGTH_LONG).show()
+    }
+
+    companion object {
+
+        const val KEY_CONTACT_ID = "contact-id"
+
+
     }
 
 

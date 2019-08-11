@@ -45,7 +45,7 @@ class ContactRepositoryImpl(
         }
     }
 
-    override fun favorite(contact: Contact) {
+    override fun favorite(contact: Contact): Contact? {
         return runAsync {
             val favoriteContact = contactDao.getFavoriteContactById(contactId = contact.id)
 
@@ -55,10 +55,15 @@ class ContactRepositoryImpl(
                         favoriteContact.favoriteId
                     )
                 )
+
+                null
             } else {
-                favoriteContactDao.insert(
+                val favoriteId = favoriteContactDao.insert(
                     FavoriteContactEntity(contactId = contact.id)
                 )
+
+                contact.favoriteId = favoriteId.toInt()
+                contact
             }
         }
     }
