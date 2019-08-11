@@ -23,10 +23,12 @@ class UpdateFavoriteContactViewModel(private val repository: ContactRepository) 
                 try {
                     _loading.postValue(true)
 
-                    if (repository.favorite(it) == null) {
-                        _favorite.postValue(false)
-                    } else {
-                        _favorite.postValue(true)
+                    repository.favorite(it)?.let {
+                        if (it.favoriteId == null) {
+                            _favorite.postValue(false)
+                        } else {
+                            _favorite.postValue(true)
+                        }
                     }
                 } catch (e: Throwable) {
                     _error.postValue(e)

@@ -56,14 +56,13 @@ class ContactRepositoryImpl(
                     )
                 )
 
-                null
+                contact.copy(favoriteId = null)
             } else {
                 val favoriteId = favoriteContactDao.insert(
                     FavoriteContactEntity(contactId = contact.id)
                 )
 
-                contact.favoriteId = favoriteId.toInt()
-                contact
+                contact.copy(favoriteId = favoriteId.toInt())
             }
         }
     }
