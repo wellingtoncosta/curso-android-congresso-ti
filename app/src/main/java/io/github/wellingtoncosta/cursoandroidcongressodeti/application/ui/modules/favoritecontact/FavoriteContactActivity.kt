@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.lifecycle.Observer
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.SelectContactFragment.Companion.KEY_CONTACT_ID
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.viewmodels.FindContactByIdViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.viewmodels.UpdateFavoriteContactViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ActivityFavoriteContactBinding
@@ -20,12 +21,16 @@ class FavoriteContactActivity : AppCompatActivity() {
     private val findContactByIdViewModel by viewModel<FindContactByIdViewModel>()
     private val updateFavoriteContactViewModel by viewModel<UpdateFavoriteContactViewModel>()
 
+    private var mContactId: Int = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         configureDataBinding()
 
         configureToolbar()
+
+        mContactId = intent.getIntExtra(KEY_CONTACT_ID, -1)
     }
 
     private fun configureDataBinding() {
@@ -45,6 +50,8 @@ class FavoriteContactActivity : AppCompatActivity() {
         super.onStart()
 
         configureViewModelObservers()
+
+        loadContact(mContactId)
     }
 
     private fun configureViewModelObservers() {
@@ -69,6 +76,12 @@ class FavoriteContactActivity : AppCompatActivity() {
                 ContextCompat.getDrawable(this, drawableId)
             )
         })
+    }
+
+    private fun loadContact(contactId: Int) {
+        if (contactId >= 0) {
+            findContactByIdViewModel.loadContact(contactId)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
