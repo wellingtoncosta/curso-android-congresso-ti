@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity
+package io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.entity
 
 import androidx.room.ColumnInfo
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact

@@ -1,15 +1,15 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.repository
+package io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact.repository
 
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.extensions.executors.runAsync
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repositories.contact.ContactRepository
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.ContactDao
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.FavoriteContactDao
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.FavoriteContactEntity
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.toModel
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.ContactApiDataSource
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.responses.toEntity
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.responses.toModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.ContactDao
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.FavoriteContactDao
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.entity.FavoriteContactEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.entity.toModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact.ContactApiDataSource
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact.responses.toEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact.responses.toModel
 
 class ContactRepositoryImpl(
     private val contactApiDataSource: ContactApiDataSource,

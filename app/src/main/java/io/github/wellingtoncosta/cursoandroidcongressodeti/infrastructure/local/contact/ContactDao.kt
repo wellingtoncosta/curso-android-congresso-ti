@@ -1,12 +1,12 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact
+package io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactEntity
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactQueryModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.entity.ContactEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.local.contact.entity.ContactQueryModel
 
 @Dao
 interface ContactDao {

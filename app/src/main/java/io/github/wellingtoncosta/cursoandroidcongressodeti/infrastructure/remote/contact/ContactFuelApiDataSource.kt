@@ -1,9 +1,9 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact
+package io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact
 
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.gson.responseObject
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.exceptions.runtimeexception.NetworkException
-import io.github.wellingtoncosta.cursoandroidcongressodeti.services.remote.contact.responses.ContactResponse
+import io.github.wellingtoncosta.cursoandroidcongressodeti.infrastructure.remote.contact.responses.ContactResponse
 
 class ContactFuelApiDataSource : ContactApiDataSource {
 
