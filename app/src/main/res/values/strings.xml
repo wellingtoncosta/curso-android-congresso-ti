@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">Curso Android - Congresso de TI</string>
-    <string name="lista_contatos">Lista de Contatos</string>
+
+    <string name="app_name">Android Course - Congresso de TI</string>
+
+    <string name="main.toolbar_title">Contact List</string>
+
+    <string name="main.contact_page_fragment_title">Contact</string>
+    <string name="main.favorite_contact_page_fragment_title">Favorite</string>
+
 </resources>
