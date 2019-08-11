@@ -1,6 +1,9 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.app.config
 
 import androidx.room.Room
+import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.favoritarcontato.BuscarContatoPorIdViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.favoritarcontato.FavoritarContatoViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.listarcontatos.favoritos.ListaContatosFavoritosViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.listarcontatos.todos.ListaContatosViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repository.ContatoRepository
 import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.database.AppDatabase
@@ -34,4 +37,7 @@ val repositoryModule = module {
 
 val viewModelModule = module {
     viewModel { ListaContatosViewModel(get()) }
+    viewModel { ListaContatosFavoritosViewModel(get()) }
+    viewModel { BuscarContatoPorIdViewModel(get()) }
+    viewModel { FavoritarContatoViewModel(get()) }
 }

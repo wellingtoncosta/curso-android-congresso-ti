@@ -2,6 +2,9 @@
     <string name="app_name">Curso Android - Congresso de TI</string>
     <string name="contatos">Contatos</string>
     <string name="falha_carregar_contatos">Houve uma falha ao carregar os contatos</string>
+    <string name="falha_carregar_contatos_favoritos">Houve uma falha ao carregar os contatos favoritos</string>
+    <string name="falha_favoritar_contato">Houve uma falha ao favoritar / desfavoritar contato</string>
+    <string name="favoritar_contato">Favoritar Contato</string>
     <string name="favoritos">Favoritos</string>
     <string name="lista_contatos">Lista de Contatos</string>
 </resources>

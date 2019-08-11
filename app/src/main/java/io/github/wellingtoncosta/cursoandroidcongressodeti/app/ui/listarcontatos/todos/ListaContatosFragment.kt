@@ -1,5 +1,6 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.listarcontatos.todos
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
+import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.favoritarcontato.FavoritarContatoActivity
 import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.listarcontatos.ListaContatosAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.FragmentListaContatosBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -50,6 +52,12 @@ class ListaContatosFragment : Fragment() {
 
     private fun irParaTelaFavoritarContato(contatoId: Int) {
         Log.d("CONTATO_SELECIONADO", contatoId.toString())
+
+        val intent = Intent(activity, FavoritarContatoActivity::class.java)
+
+        intent.putExtra(CONTATO_ID, contatoId)
+
+        startActivity(intent)
     }
 
     private fun observarCarregando() {
@@ -62,8 +70,6 @@ class ListaContatosFragment : Fragment() {
 
     private fun observarContatos() {
         viewModel.contatos.observe(viewLifecycleOwner, Observer {
-            Log.d("CONTATOS", it.toString())
-
             (binding.recyclerView.adapter as ListaContatosAdapter)
                 .atualizarContatos(it)
         })
@@ -75,6 +81,10 @@ class ListaContatosFragment : Fragment() {
                 activity, R.string.falha_carregar_contatos, Toast.LENGTH_LONG
             ).show()
         })
+    }
+
+    companion object {
+        const val CONTATO_ID = "contato-id"
     }
 
 }

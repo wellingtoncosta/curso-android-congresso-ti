@@ -49,7 +49,7 @@ class ContatoRepositoryImpl(
 
                 contato.copy(favoritoId = favoritoId.toInt())
             } else {
-                dao.deletar(contato.toEntity())
+                dao.deletar(contato.toEntity().copy(id = favorito.id))
 
                 contato.copy(favoritoId = null)
             }
