@@ -7,7 +7,7 @@ data class ContactResponse(
     val id: Int,
     val name: String,
     val email: String,
-    val phoneNumber: String
+    val phone: String
 )
 
 
@@ -16,7 +16,7 @@ fun ContactResponse.toEntity(): ContactEntity {
         id = this.id,
         name = this.name,
         email = this.email,
-        phoneNumber = this.phoneNumber
+        phoneNumber = this.phone
     )
 }
 
@@ -25,6 +25,6 @@ fun ContactResponse.toModel(): Contact {
         id = this.id,
         name = this.name,
         email = this.email,
-        phoneNumber = this.phoneNumber
+        phoneNumber = this.phone
     )
 }
