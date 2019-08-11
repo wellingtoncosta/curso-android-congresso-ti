@@ -3,6 +3,7 @@ package io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.conta
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactEntity
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.contact.entity.ContactQueryModel
@@ -46,7 +47,7 @@ interface ContactDao {
     )
     fun getFavoriteContactById(contactId: Int): ContactQueryModel?
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     fun insert(contactEntity: ContactEntity): Long
 
     @Delete
