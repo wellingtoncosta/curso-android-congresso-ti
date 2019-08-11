@@ -35,20 +35,16 @@ abstract class SelectContactFragment : Fragment() {
         mSelectContactFragmentBinding.selectContactRecyclerView.adapter = mContactAdapter
 
         configureSwipeRefresh()
+
+        configureViewModelObservers()
+
+        requestData()
     }
 
     private fun configureSwipeRefresh() {
         mSelectContactFragmentBinding.selectContactSwipeRefreshLayout.setOnRefreshListener {
             requestData()
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        configureViewModelObservers()
-
-        requestData()
     }
 
     abstract fun configureViewModelObservers()

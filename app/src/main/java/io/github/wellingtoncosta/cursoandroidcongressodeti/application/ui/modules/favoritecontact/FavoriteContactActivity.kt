@@ -11,7 +11,6 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.module
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.viewmodels.FindContactByIdViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.viewmodels.UpdateFavoriteContactViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ActivityFavoriteContactBinding
-import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteContactActivity : AppCompatActivity() {
@@ -36,7 +35,9 @@ class FavoriteContactActivity : AppCompatActivity() {
     private fun configureDataBinding() {
         binding = setContentView(this, R.layout.activity_favorite_contact)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner                 = this
+        binding.findContactByIdViewModel       = findContactByIdViewModel
+        binding.updateFavoriteContactViewModel = updateFavoriteContactViewModel
     }
 
     private fun configureToolbar() {
@@ -55,15 +56,7 @@ class FavoriteContactActivity : AppCompatActivity() {
     }
 
     private fun configureViewModelObservers() {
-        configureFindContactByIdObserver()
-
         configureUpdateFavoriteContactObserver()
-    }
-
-    private fun configureFindContactByIdObserver() {
-        findContactByIdViewModel.contact.observe(this, Observer { contact ->
-            binding.contact = contact
-        })
     }
 
     private fun configureUpdateFavoriteContactObserver() {
