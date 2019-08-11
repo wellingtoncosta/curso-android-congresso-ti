@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,20 +7,21 @@ import androidx.viewpager.widget.PagerAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.R
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.adapters.pageadapter.CustomPagerAdapter
 import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.adapters.pageadapter.PageFragment
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.fragments.ContactFragment
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.fragments.FavoriteContactFragment
-import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.MainActivityBinding
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.fragments.ContactFragment
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.fragments.FavoriteContactFragment
+import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: MainActivityBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mBinding = setContentView(this, R.layout.main_activity)
+        binding = setContentView(this, R.layout.activity_main)
 
-        mBinding.selectContactViewPager.adapter = getContactViewPagerAdapter()
+        binding.lifecycleOwner                 = this
+        binding.selectContactViewPager.adapter = getContactViewPagerAdapter()
     }
 
     private fun getContactViewPagerAdapter(): PagerAdapter {

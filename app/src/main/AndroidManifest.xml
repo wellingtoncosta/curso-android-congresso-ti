@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".application.ui.modules.MainActivity">
+        <activity android:name=".application.ui.modules.favoritecontact.FavoriteContactActivity"></activity>
+        <activity android:name=".application.ui.modules.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

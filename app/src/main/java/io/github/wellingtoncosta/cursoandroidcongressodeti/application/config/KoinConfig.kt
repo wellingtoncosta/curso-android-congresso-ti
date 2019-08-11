@@ -1,8 +1,8 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.application.config
 
 import androidx.room.Room
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.viewmodels.SelectContactViewModel
-import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.viewmodels.SelectFavoriteContactViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.viewmodels.SelectContactViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.viewmodels.SelectFavoriteContactViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repositories.contact.ContactRepository
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.AppDatabase
 import io.github.wellingtoncosta.cursoandroidcongressodeti.services.local.AppDatabase.Companion.DATABASE_NAME
@@ -36,7 +36,15 @@ val repositoryModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { SelectContactViewModel(get()) }
+    viewModel {
+        SelectContactViewModel(
+            get()
+        )
+    }
 
-    viewModel { SelectFavoriteContactViewModel(get()) }
+    viewModel {
+        SelectFavoriteContactViewModel(
+            get()
+        )
+    }
 }

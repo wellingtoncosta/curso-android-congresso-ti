@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.selectcontact.adapters
+package io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.modules.main.selectcontact.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,9 @@ import io.github.wellingtoncosta.cursoandroidcongressodeti.application.ui.compon
 import io.github.wellingtoncosta.cursoandroidcongressodeti.databinding.ContactItemBinding
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact
 
-class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+class ContactAdapter(
+    private val onItemClick: (Int) -> Unit = {}
+) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
     private var mData: List<Contact>? = null
 
@@ -30,7 +32,11 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() 
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val contact = mData?.get(position)
-        contact?.let { holder.setContact(it) }
+
+        contact?.let {
+            holder.setContact(it)
+            holder.itemView.setOnClickListener { onItemClick(contact.id) }
+        }
     }
 
     fun addData(data: List<Contact>) {
