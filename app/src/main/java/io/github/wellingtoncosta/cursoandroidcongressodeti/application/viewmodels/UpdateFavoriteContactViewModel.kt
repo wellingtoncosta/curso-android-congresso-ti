@@ -17,20 +17,22 @@ class UpdateFavoriteContactViewModel(private val repository: ContactRepository) 
     val favorite: LiveData<Boolean> get() = _favorite
     val error: LiveData<Throwable> get()  = _error
 
-    fun favorite(contact: Contact) {
-        doInBackground {
-            try {
-                _loading.postValue(true)
+    fun favorite(contact: Contact?) {
+        contact?.let {
+            doInBackground {
+                try {
+                    _loading.postValue(true)
 
-                if (repository.favorite(contact) == null) {
-                    _favorite.postValue(false)
-                } else {
-                    _favorite.postValue(true)
+                    if (repository.favorite(it) == null) {
+                        _favorite.postValue(false)
+                    } else {
+                        _favorite.postValue(true)
+                    }
+                } catch (e: Throwable) {
+                    _error.postValue(e)
+                } finally {
+                    _loading.postValue(false)
                 }
-            } catch (e: Throwable) {
-                _error.postValue(e)
-            } finally {
-                _loading.postValue(false)
             }
         }
     }

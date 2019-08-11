@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="contact"
+            type="io.github.wellingtoncosta.cursoandroidcongressodeti.domain.models.contact.Contact" />
+
     </data>
 
     <LinearLayout
@@ -51,6 +55,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/favorite_contact_floating_action_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
