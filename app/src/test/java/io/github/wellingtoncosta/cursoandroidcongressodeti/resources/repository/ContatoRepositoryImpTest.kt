@@ -1,11 +1,11 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.resources.repository
 
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.entity.Contato
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.ContatoMocks.cincoContatosFavoritosEntity
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.ContatoMocks.cincoContatosResponse
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.ContatoMocks.umContato
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.ContatoMocks.umContatoFavoritoEntity
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.ContatoMocks.umContatoResponse
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.ContatoMocks.cincoContatosFavoritosEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.ContatoMocks.cincoContatosResponse
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.ContatoMocks.umContato
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.ContatoMocks.umContatoFavoritoEntity
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.ContatoMocks.umContatoResponse
 import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.database.dao.ContatoFavoritoDao
 import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.network.ContatoApi
 import io.mockk.*

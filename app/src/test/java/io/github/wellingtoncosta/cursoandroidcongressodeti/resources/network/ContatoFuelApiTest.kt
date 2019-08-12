@@ -1,10 +1,10 @@
 package io.github.wellingtoncosta.cursoandroidcongressodeti.resources.network
 
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.exception.NetworkException
-import io.github.wellingtoncosta.cursoandroidcongressodeti.extension.asJson
-import io.github.wellingtoncosta.cursoandroidcongressodeti.extension.dispatches
-import io.github.wellingtoncosta.cursoandroidcongressodeti.extension.responses
-import io.github.wellingtoncosta.cursoandroidcongressodeti.mock.startHttpServer
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.extension.asJson
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.extension.dispatches
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.extension.responses
+import io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock.startHttpServer
 import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.network.entity.ContatoResponse
 import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.network.fuel.ContatoFuelApi
 import okhttp3.mockwebserver.MockWebServer

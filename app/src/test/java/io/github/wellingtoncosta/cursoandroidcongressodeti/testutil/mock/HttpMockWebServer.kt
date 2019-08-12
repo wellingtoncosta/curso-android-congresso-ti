@@ -1,4 +1,4 @@
-package io.github.wellingtoncosta.cursoandroidcongressodeti.mock
+package io.github.wellingtoncosta.cursoandroidcongressodeti.testutil.mock
 
 import com.github.kittinunf.fuel.core.FuelManager
 import okhttp3.mockwebserver.MockWebServer
