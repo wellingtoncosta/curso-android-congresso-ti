@@ -36,8 +36,8 @@ val repositoryModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { ListaContatosViewModel(get()) }
-    viewModel { ListaContatosFavoritosViewModel(get()) }
-    viewModel { BuscarContatoPorIdViewModel(get()) }
-    viewModel { FavoritarContatoViewModel(get()) }
+    viewModel { ListaContatosViewModel(repository = get()) }
+    viewModel { ListaContatosFavoritosViewModel(repository = get()) }
+    viewModel { BuscarContatoPorIdViewModel(repository = get()) }
+    viewModel { FavoritarContatoViewModel(repository = get()) }
 }

@@ -3,14 +3,16 @@ package io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.favoritarcont
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import io.github.wellingtoncosta.cursoandroidcongressodeti.app.ui.BackgroundViewModel
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.entity.Contato
 import io.github.wellingtoncosta.cursoandroidcongressodeti.domain.repository.ContatoRepository
-import io.github.wellingtoncosta.cursoandroidcongressodeti.resources.extension.doInBackground
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class FavoritarContatoViewModel(
+    executor: ExecutorService = Executors.newSingleThreadExecutor(),
     private val repository: ContatoRepository
-) : ViewModel() {
+) : BackgroundViewModel(executor) {
 
     private val _carregando = MutableLiveData<Boolean>()
     private val _erro = MutableLiveData<Throwable>()
